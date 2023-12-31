@@ -8,7 +8,7 @@ source ./.pipeline/airconnect.env
 
 mkdir -pv ./bin/
 
-find ../${AIRCONNECT_REPO_NAME}/ -name "AirConnect-*.zip" -exec unzip -d bin/ {} \;
+find ${AIRCONNECT_REPO_NAME}/ -name "AirConnect-*.zip" -exec unzip -d bin/ {} \;
 
 mkdir -pv ./dist/
 rm -v ./dist/*.deb || true
