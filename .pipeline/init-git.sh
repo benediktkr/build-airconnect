@@ -13,5 +13,5 @@ if [ -d "./${AIRCONNECT_REPO_NAME}/.git" ]; then
     )
 else
     echo "clone of the ${AIRCONNECT_REPO_NAME} does not exist, cloning ${AIRCONNECT_REPO_ORIGIN}"
-    git clone ${AIRCONNECT_REPO_ORIGIN}
+    git clone --depth 1 ${AIRCONNECT_REPO_ORIGIN}
 fi
