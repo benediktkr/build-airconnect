@@ -5,10 +5,11 @@ set -e
 source ./.pipeline/airconnect.env
 
 . ./.pipeline/init-git.sh
+. ./.pipeline/cleanup.sh
 
 mkdir -pv ./bin/
 
-find ${AIRCONNECT_REPO_NAME}/ -name "AirConnect-*.zip" -exec unzip -d bin/ {} \;
+find ${AIRCONNECT_REPO_NAME}/ -name "AirConnect-*.zip" -exec unzip -d airconnect-bin/ {} \;
 
 mkdir -pv ./dist/
 rm -v ./dist/*.deb || true
@@ -18,3 +19,5 @@ rm -v ./dist/*.deb || true
 
 docker build --pull -t airconnect:latest .
 docker tag airconnect:latest ${DOCKER_REPO}/airconnect:latest
+
+. ./.pipeline/cleanup.sh
