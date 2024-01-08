@@ -1,4 +1,4 @@
-# airconnect
+# `build-airconnect`
 
 a simple and small docker container for
 [AirConnect](https://github.com/philippe44/AirConnect).
